@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+         #formulaire {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        margin: 50px auto;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        background-color: bisque;
+        font-family: Arial, sans-serif;
+    }
+     #formulaire input {
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px dotted black;
+        border-radius: 5px;
+        font-size: 12px;
+        transition: border 0.3s, box-shadow 0.3s;
+    }
+    #button {
+        background-color: burlywood;
+        text-decoration: aliceblue;
+    }
+     #button:hover {
+        background-color: bisque;
+        text-decoration: aliceblue;
+    }
+    </style>
+    <form action="" id="formulaire">
+    <input type="text" id="num1" placeholder="entrer le premier nombre">
+    <input type="text" id="num2"  placeholder="entrer le deuxieme nombre">
+    <button type="submit" id="button">CALCUL</button>
+</form>
+
+
+<script>
+    
+    document.getElementById("formulaire").addEventListener("submit", function(event) {
+        event.preventDefault(); 
+        let num1 = Number(document.getElementById("num1").value);
+        let num2 = Number(document.getElementById("num2").value);
+
+        let som = num1 + num2;
+        alert("La somme est : " + som);
+    });
+</script>
+
+    </script>
+</body>
+</html>

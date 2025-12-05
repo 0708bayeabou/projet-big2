@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #formulaire{
+            border: 2px dotted burlywood;
+            width: 250px;            
+            margin: 100px auto;      
+            padding: 20px;
+            background: #f1f1f1;    
+            border-radius: 10px;     
+            text-align: center;
+        }
+        #button{
+            display: flex;
+            margin: auto;
+            margin-top: 10px;
+        }
+        #button:hover{
+            display: flex;
+            margin: auto;
+            margin-top: 10px;
+            background-color: whitesmoke;
+        }
+    </style>
+
+    <form action="" id="formulaire" >
+        <input type="text" placeholder="saisir un nombre" id="numb">
+        <button type="submit" id="button">Verifier</button>
+    </form>
+
+    <script>
+        document.getElementById("formulaire").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            let number = Number(document.getElementById("numb").value);
+
+            if (number < 2) {
+                alert(" Pas premier");
+                return;
+            }
+                
+            let i = 2;
+            while (number % i != 0 && i < number) {
+                i++;
+            }
+
+            if (i == number) {
+                alert("le nombre est Premier");
+            } else {
+                alert(" Pas premier");
+            }
+        });
+    </script>
+</body>
+</html>
