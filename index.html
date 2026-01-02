@@ -3,59 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>calculatrice</title>
+    <link rel="stylesheet" href="coursJS/style.css">
+
 </head>
 <body>
-    <style>
-        #formulaire{
-            border: 2px dotted burlywood;
-            width: 250px;            
-            margin: 100px auto;      
-            padding: 20px;
-            background: #f1f1f1;    
-            border-radius: 10px;     
-            text-align: center;
-        }
-        #button{
-            display: flex;
-            margin: auto;
-            margin-top: 10px;
-        }
-        #button:hover{
-            display: flex;
-            margin: auto;
-            margin-top: 10px;
-            background-color: whitesmoke;
-        }
-    </style>
+   
+    <div class="container">
+        <h1>Calculatrice</h1>
+        <form  id="formulaire">
+            <input type="number" placeholder="Nombre 1" id="numb1" required>
+            <input type="number" placeholder="Nombre 2" id="numb2" required>
+            <button type="submit" >Calculer</button>
+        </form>
 
-    <form action="" id="formulaire" >
-        <input type="text" placeholder="saisir un nombre" id="numb">
-        <button type="submit" id="button">Verifier</button>
-    </form>
+        <section id="resultat">
+            <h2>Résultats</h2>
+            <ul>
+                <li>Somme : <span id="somme"></span></li>
+                <li>Différence : <span id="difference"></span></li>
+                <li>Produit : <span id="produit"></span></li>
+                <li>Quotient : <span id="quotient"></span></li>
+            </ul>
+        </section>
+    </div>
 
-    <script>
-        document.getElementById("formulaire").addEventListener("submit", function(event) {
-            event.preventDefault();
-            
-            let number = Number(document.getElementById("numb").value);
-
-            if (number < 2) {
-                alert(" Pas premier");
-                return;
-            }
-                
-            let i = 2;
-            while (number % i != 0 && i < number) {
-                i++;
-            }
-
-            if (i == number) {
-                alert("le nombre est Premier");
-            } else {
-                alert(" Pas premier");
-            }
-        });
-    </script>
+     <script src="coursJS/script.js"></script>
 </body>
 </html>
