@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="coursJS/style.css">
+</head>
+
+<body>
+
+    <form action="" id="form">
+        <input type="email" id="email" t placeholder="email">
+
+        <input type="text" id="tel" placeholder="Tel">
+
+        <input type="password" id="mdp" placeholder="Mdp">
+
+        <button type="submit">valider</button>
+        <p id="message"></p>
+    </form>
+
+
+    <script>
+        function emailvalide(email) {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+        }
+
+        function telValide(telephone) {
+            return telephone.length === 9;
+        }
+
+        let form = document.getElementById("form");
+        let message = document.getElementById("message");
+        let emailInput = document.getElementById("email");
+        let telInput = document.getElementById("tel");
+
+        message.classList.add("important");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Vérification email
+            if (!emailvalide(emailInput.value)) {
+                message.textContent = "Email invalide";
+                message.style.color = "red";
+                return;
+            }
+
+            // Vérification téléphone
+            if (!telValide(telInput.value)) {
+                message.textContent = "Numéro incorrect";
+                message.style.color = "red";
+                return;
+            }
+
+            message.textContent = "Email et téléphone valides ";
+            message.style.color = "green";
+        });
+    </script>
+
+
+</body>
+
+</html>
